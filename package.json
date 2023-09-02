@@ -1,0 +1,27 @@
+{
+  "name": "aws-dva-c02-exam-prepare",
+  "version": "1.0.0",
+  "description": "Help prepare to become an AWS Certified Developer - Associate (DVA-C02)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andynavy23/aws-dva-c02-exam-prepare.git"
+  },
+  "keywords": [
+    "aws",
+    "dva-c02"
+  ],
+  "author": "Andrew FU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andynavy23/aws-dva-c02-exam-prepare/issues"
+  },
+  "homepage": "https://github.com/andynavy23/aws-dva-c02-exam-prepare#readme",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
