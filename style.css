@@ -1,0 +1,488 @@
+/* CSS */
+.button-85 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-right: 20px;
+}
+
+.button-85:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.control-container {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+h2 {
+    font-size: 28px;
+    color: #0191ce;
+    text-shadow: 0 0 10px #00ffcc;
+    margin: 20px 0;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #00a2ff;
+    margin-top: 8px;
+}
+
+.control-part-2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.space-invader {
+    margin: 35 auto;
+    /* Modify size here: */
+    --block-size: 7px;
+
+    box-shadow: 0 0 0 var(--block-size) #333,
+        0 var(--block-size) 0 var(--block-size) #333,
+        calc(var(--block-size) * -2.5) calc(var(--block-size) * 1.5) 0
+            calc(var(--block-size) * 0.5) #333,
+        calc(var(--block-size) * 2.5) calc(var(--block-size) * 1.5) 0
+            calc(var(--block-size) * 0.5) #333,
+        calc(var(--block-size) * -3) calc(var(--block-size) * -3) 0 0 #333,
+        calc(var(--block-size) * 3) calc(var(--block-size) * -3) 0 0 #333,
+        calc(var(--block-size) * -2) calc(var(--block-size) * -2) 0 0 #333,
+        calc(var(--block-size) * 2) calc(var(--block-size) * -2) 0 0 #333,
+        calc(var(--block-size) * -3) calc(var(--block-size) * -1) 0 0 #333,
+        calc(var(--block-size) * -2) calc(var(--block-size) * -1) 0 0 #333,
+        calc(var(--block-size) * 2) calc(var(--block-size) * -1) 0 0 #333,
+        calc(var(--block-size) * 3) calc(var(--block-size) * -1) 0 0 #333,
+        calc(var(--block-size) * -4) 0 0 0 #333,
+        calc(var(--block-size) * -3) 0 0 0 #333,
+        calc(var(--block-size) * 3) 0 0 0 #333,
+        calc(var(--block-size) * 4) 0 0 0 #333,
+        calc(var(--block-size) * -5) var(--block-size) 0 0 #333,
+        calc(var(--block-size) * -4) var(--block-size) 0 0 #333,
+        calc(var(--block-size) * 4) var(--block-size) 0 0 #333,
+        calc(var(--block-size) * 5) var(--block-size) 0 0 #333,
+        calc(var(--block-size) * -5) calc(var(--block-size) * 2) 0 0 #333,
+        calc(var(--block-size) * 5) calc(var(--block-size) * 2) 0 0 #333,
+        calc(var(--block-size) * -5) calc(var(--block-size) * 3) 0 0 #333,
+        calc(var(--block-size) * -3) calc(var(--block-size) * 3) 0 0 #333,
+        calc(var(--block-size) * 3) calc(var(--block-size) * 3) 0 0 #333,
+        calc(var(--block-size) * 5) calc(var(--block-size) * 3) 0 0 #333,
+        calc(var(--block-size) * -2) calc(var(--block-size) * 4) 0 0 #333,
+        calc(var(--block-size) * -1) calc(var(--block-size) * 4) 0 0 #333,
+        var(--block-size) calc(var(--block-size) * 4) 0 0 #333,
+        calc(var(--block-size) * 2) calc(var(--block-size) * 4) 0 0 #333;
+    background: #a03838;
+    width: var(--block-size);
+    height: var(--block-size);
+    overflow: hidden;
+}
+
+.input_number {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #00ffcc;
+    background-color: #333;
+    color: #00ffcc;
+    font-size: 16px;
+    width: 150px;
+    transition: border-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.input_number:focus {
+    outline: none;
+    border-bottom-color: #ff0088;
+    box-shadow: 0 2px 4px rgba(255, 0, 136, 0.4);
+}
+
+.input_number::-webkit-inner-spin-button,
+.input_number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input_number::placeholder {
+    color: #666;
+}
+
+.input_number:invalid {
+    box-shadow: none;
+}
+
+@keyframes neon-pulse {
+    0% {
+        border-color: #00ffcc;
+        box-shadow: 0 2px 4px rgba(255, 0, 136, 0.4);
+    }
+    50% {
+        border-color: #ff0088;
+        box-shadow: 0 4px 8px rgba(255, 0, 136, 0.6);
+    }
+    100% {
+        border-color: #00ffcc;
+        box-shadow: 0 2px 4px rgba(255, 0, 136, 0.4);
+    }
+}
+
+.input_number:focus {
+    animation: neon-pulse 2s infinite;
+}
+
+.questions-container {
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    border: 1px solid 000000;
+    background-color: rgba(212, 212, 213, 0.412);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.progress {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(236, 248, 106, 0.869);
+    font-size: 20px;
+}
+
+/* Card style */
+.card.exam-question-card {
+    margin-bottom: 20px;
+}
+
+/* Card header style */
+.card-header {
+    padding: 10px;
+    font-weight: bold;
+    background-color: rgb(110, 117, 250);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+        rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+/* Card body style */
+.card-body {
+    padding: 20px;
+}
+
+/* Question title style */
+.question-title-topic {
+    float: right;
+}
+
+/* Question body style */
+.question-body {
+    margin-bottom: 20px;
+}
+
+.card-text {
+    background-color: rgba(225, 206, 179, 0.631);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+        rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+/* Answer choices container style */
+.question-choices-container ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: rgba(205, 221, 228, 0.705);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+        rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+/* Answer choice item style */
+.multi-choice-item {
+    margin-bottom: 10px;
+}
+
+/* Correct answer style */
+/* .multi-choice-item.correct-hidden .multi-choice-letter {
+    font-weight: bold;
+    color: green;
+} */
+
+/* Answer description style */
+.answer-description {
+    font-style: italic;
+    color: gray;
+}
+
+/* Reveal solution button style */
+.reveal-solution,
+.hide-solution {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Question answer style */
+.question-answer {
+    padding: 10px;
+    margin-bottom: 50px;
+    background-color: #89bd90;
+}
+
+/* Correct answer box style */
+.correct-answer-box {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* Inline discussion container style */
+.inline-discussion {
+    margin-top: 20px;
+    border-top: 1px solid #dee2e6;
+    padding-top: 10px;
+}
+
+/* Comment container style */
+.comment-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(190, 190, 196, 0.631);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+        rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+/* Comment head style */
+.comment-head {
+    margin-bottom: 5px;
+}
+
+/* Comment username style */
+.comment-username {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Comment date style */
+.comment-date {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Comment content style */
+.comment-content {
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+}
+
+/* Comment control style */
+.comment-control {
+    margin-top: 10px;
+}
+
+/* Upvote text style */
+.upvote-text {
+    font-size: 12px;
+    color: gray;
+}
+
+/* New comment box style */
+.new-comment-box {
+    margin-top: 10px;
+}
+
+/* Comment replies style */
+.comment-replies {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 1px solid #dee2e6;
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: modalFadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #111;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #666;
+    border-radius: 10px;
+    max-width: 600px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    animation: modalSlideIn 0.3s;
+}
+
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+/* Animation keyframes */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Start with the sidebar hidden */
+    width: 200px;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    transition: left 0.3s;
+    z-index: 9999;
+}
+
+.sidebar.open {
+    left: 0; /* Show the sidebar when it's open */
+}
+
+.sidebar-content {
+    margin-bottom: 20px;
+}
+
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #fcfcfd;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395a;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.button-30:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-30:active {
+    box-shadow: #d6d6e7 0 3px 7px inset;
+    transform: translateY(2px);
+}
