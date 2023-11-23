@@ -91,7 +91,7 @@ let questions = Array.from(
 const questions_back_up = questions.slice(0);
 document.getElementById(
     "questions_count"
-).innerText = `Left ${questions.length} questions`;
+).innerText = `模擬試題 剩 ${questions.length} 題`;
 // hide all questions
 document.getElementById("questions-container").innerHTML = "";
 // all questions list
@@ -102,6 +102,7 @@ document.getElementById("sidebar").innerHTML = questions_back_up
         }</button></div>`;
     })
     .join("");
+let current_question_index = 0;
 let random_index;
 let show_question_tag = false;
 let show_anwser_tag = false;
@@ -193,7 +194,8 @@ function reset_click() {
     location.reload();
 }
 
-function sidebar_question_click(question_index) {
+function sidebar_question_click(question_index, need_toggle = true) {
+    current_question_index = question_index;
     if (show_question_tag == true) {
         document.getElementById("questions-container").innerHTML = "";
     }
@@ -205,7 +207,9 @@ function sidebar_question_click(question_index) {
     show_question_tag = true;
     show_anwser_tag = false;
     highlighted_tag = false;
-    toggleSidebar();
+    if (need_toggle) {
+        toggleSidebar();
+    }
     document.getElementById("answer_style").remove();
 }
 
@@ -335,17 +339,19 @@ function openModal(modal_type) {
             <span class="close" onclick="closeModal()">&times;</span>
 			<h3>AWS DVA-C02 Exam Prepare Information</h3>
 			<hr />
-			<p>List of all topics => "s"</p>
-			<p>Random next topic => "q"</p>
-			<p>Show answer => "a"</p>
-			<p>Reset => "r"</p>
-			<p>Display a single topic to a new page (according to topic number) => "c"</p>
-			<p>Topic number + 1 => "+"</p>
-			<p>Topic number - 1 => "-"</p>
-			<p>INFO => "i"</p>
-			<p>Highlight AWS Service Keywords => "h"</p>
+			<p>所有題目列表 => "s"</p>
+			<p>隨機下一題目 => "q"</p>
+			<p>顯示答案 => "a"</p>
+			<p>重置頁面 => "r"</p>
+			<p>根據題目編號開新頁面 => "c"</p>
+			<p>題目編號 + 1 => "+"</p>
+			<p>題目編號 - 1 => "-"</p>
+			<p>網頁資訊 => "i"</p>
+			<p>AWS service 重點 => "h"</p>
+			<p>顯示上一題 => "."</p>
+			<p>顯示下一題 => "/"</p>
 			<hr />
-			<p>Last update: 2023-07-17</p>
+			<p>Last update: 2023-11-23</p>
         `;
     }
 }
@@ -377,6 +383,10 @@ document.addEventListener(
         let name = event.key;
         if (name == "q") {
             show_question_click();
+        } else if (name == ".") {
+            sidebar_question_click(current_question_index > 0 ? current_question_index - 1 : 0, false);
+        } else if (name == "/") {
+            sidebar_question_click(current_question_index < questions.length - 1? current_question_index + 1 : questions.length - 1, false);
         } else if (name == "a") {
             show_anwser_click();
         } else if (name == "r") {
