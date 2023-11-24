@@ -348,10 +348,10 @@ function openModal(modal_type) {
 			<p>題目編號 - 1 => "-"</p>
 			<p>網頁資訊 => "i"</p>
 			<p>AWS service 重點 => "h"</p>
-			<p>顯示上一題 => "."</p>
-			<p>顯示下一題 => "/"</p>
+			<p>顯示上一題 => "." or 方向鍵左</p>
+			<p>顯示下一題 => "/" or 方向鍵右</p>
 			<hr />
-			<p>Last update: 2023-11-23</p>
+			<p>Last update: 2023-11-24</p>
         `;
     }
 }
@@ -378,14 +378,14 @@ function toggleSidebar() {
 }
 
 document.addEventListener(
-    "keypress",
+    "keydown",
     (event) => {
         let name = event.key;
         if (name == "q") {
             show_question_click();
-        } else if (name == ".") {
+        } else if (name == "." || name == "ArrowLeft") {
             sidebar_question_click(current_question_index > 0 ? current_question_index - 1 : 0, false);
-        } else if (name == "/") {
+        } else if (name == "/" || name == "ArrowRight") {
             sidebar_question_click(current_question_index < questions.length - 1? current_question_index + 1 : questions.length - 1, false);
         } else if (name == "a") {
             show_anwser_click();
